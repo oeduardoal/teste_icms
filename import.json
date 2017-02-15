@@ -5,7 +5,8 @@
 		"descrição": "reprodutores de raça pura",
 		"categorias": [
 			"0101",
-			"0101.2"
+			"01012",
+			"010121"
 		]
 	},
 	{
@@ -14,7 +15,8 @@
 		"descrição": "outros",
 		"categorias": [
 			"0101",
-			"0101.2"
+			"01012",
+			"010129"
 		]
 	},
 	{
@@ -23,7 +25,8 @@
 		"descrição": "asininos",
 		"categorias": [
 			"0101",
-			"0101.3"
+			"01013",
+			"010130"
 		]
 	},
 	{
@@ -32,7 +35,8 @@
 		"descrição": "outros",
 		"categorias": [
 			"0101",
-			"0101.9"
+			"01019",
+			"010190"
 		]
 	},
 	{
@@ -41,7 +45,8 @@
 		"descrição": "prenhes ou com cria ao pé",
 		"categorias": [
 			"0102",
-			"0102.2"
+			"01022",
+			"010221"
 		]
 	},
 	{
@@ -50,7 +55,8 @@
 		"descrição": "outros",
 		"categorias": [
 			"0102",
-			"0102.2"
+			"01022",
+			"010221"
 		]
 	},
 	{
@@ -59,7 +65,8 @@
 		"descrição": "prenhes ou com cria ao pé",
 		"categorias": [
 			"0102",
-			"0102.2"
+			"01022",
+			"010229"
 		]
 	},
 	{
@@ -68,7 +75,8 @@
 		"descrição": "outros",
 		"categorias": [
 			"0102",
-			"0102.2"
+			"01022",
+			"010229"
 		]
 	},
 	{
@@ -77,7 +85,8 @@
 		"descrição": "outros",
 		"categorias": [
 			"0102",
-			"0102.2"
+			"01022",
+			"010229"
 		]
 	},
 	{
@@ -86,7 +95,8 @@
 		"descrição": "prenhes ou com cria ao pé",
 		"categorias": [
 			"0102",
-			"0102.3"
+			"01023",
+			"010231"
 		]
 	},
 	{
@@ -95,7 +105,8 @@
 		"descrição": "outros",
 		"categorias": [
 			"0102",
-			"0102.3"
+			"01023",
+			"010231"
 		]
 	},
 	{
@@ -104,7 +115,8 @@
 		"descrição": "prenhes ou com cria ao pé",
 		"categorias": [
 			"0102",
-			"0102.3"
+			"01023",
+			"010239"
 		]
 	},
 	{
@@ -113,7 +125,8 @@
 		"descrição": "outros",
 		"categorias": [
 			"0102",
-			"0102.3"
+			"01023",
+			"010239"
 		]
 	},
 	{
@@ -122,7 +135,8 @@
 		"descrição": "outros",
 		"categorias": [
 			"0102",
-			"0102.3"
+			"01023",
+			"010239"
 		]
 	},
 	{
@@ -131,7 +145,8 @@
 		"descrição": "outros",
 		"categorias": [
 			"0102",
-			"0102.9"
+			"01029",
+			"010290"
 		]
 	},
 	{
@@ -140,7 +155,8 @@
 		"descrição": "reprodutores de raça pura",
 		"categorias": [
 			"0103",
-			"0103.1"
+			"01031",
+			"010310"
 		]
 	},
 	{
@@ -149,7 +165,8 @@
 		"descrição": "de peso inferior a 50 kg",
 		"categorias": [
 			"0103",
-			"0103.9"
+			"01039",
+			"010391"
 		]
 	},
 	{
@@ -158,7 +175,8 @@
 		"descrição": "de peso igual ou superior a 50 kg",
 		"categorias": [
 			"0103",
-			"0103.9"
+			"01039",
+			"010392"
 		]
 	},
 	{
@@ -167,7 +185,8 @@
 		"descrição": "prenhes ou com cria ao pé",
 		"categorias": [
 			"0104",
-			"0104.1"
+			"01041",
+			"010410"
 		]
 	}
 ]

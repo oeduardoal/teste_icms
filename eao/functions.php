@@ -1,7 +1,12 @@
 <?php
-
-	require "configs/config.php";
+	
+	# Require
+	####################################################
+	// Mail
 	require_once "mail/mail.php";
+	// Configs
+	foreach(glob(get_template_directory() . "/configs/*.php") as $filename)
+    require_once $filename;
 
 	####################################################
 	
@@ -24,8 +29,8 @@
 		// wp_enqueue_script( 'script_vanilla',  assetsurl() . '/lib/vanillamasker/vanilla.js');
 
 		// My LIB
-		wp_enqueue_script( 'script_vanilla',  assetsurl() . '/assets/js/app.js');
-		wp_enqueue_style( 'style_lightbox', assetsurl() . '/assets/css/app.css');
+		wp_enqueue_script( 'my_js',  assetsurl() . '/assets/js/app.js');
+		wp_enqueue_style( 'my_css', assetsurl() . '/assets/css/app.css');
 	}
 	add_action( 'wp_enqueue_scripts', 'load_assets' );
 
@@ -66,5 +71,3 @@
 		set_post_thumbnail_size( 480, 350, true );
 		
 	}
-
-	

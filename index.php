@@ -2,7 +2,7 @@
 
 header('Content-Type: application/json');
 
-$file = file_get_contents("mdic-menor.json");
+$file = file_get_contents("mdic-grande.json");
 
 $data = json_decode($file, TRUE);
 	
@@ -29,7 +29,8 @@ foreach ($data as $value) {
 	'descrição' => removeTraco($value['descrição']),
 	'categorias' => array(
 			substr(preg_replace("/\./", "", $value['ncm']),0, 4),
-			substr_replace(substr(preg_replace("/\./", "", $value['ncm']),0, 5), ".", -1, 0)
+			substr_replace(substr(preg_replace("/\./", "", $value['ncm']),0, 5), "", -1, 0),
+			substr_replace(substr(preg_replace("/\./", "", $value['ncm']),0, 6), "", -1, 0),
 		)
 	);
 }
