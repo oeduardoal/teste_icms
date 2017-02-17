@@ -13,6 +13,7 @@
 	function dcdc_get_document_link( $object, $field_name, $request ) {
 		return array(
 				'numero_da_ncm' => get_post_meta(get_the_ID(), 'numero_da_ncm')[0],
-				'descricao_da_ncm' => get_post_meta(get_the_ID(), 'descricao_da_ncm')[0]
+				'descricao_da_ncm' => get_post_meta(get_the_ID(), 'descricao_da_ncm')[0],
+				'relacao' => get_post_meta(get_the_ID(), 'observacao')
 			);
 	}

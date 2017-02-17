@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 <head <?php language_attributes(); ?>>
-
+	<base href="http://wsf3.com.br/teste_icms/">
   	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">

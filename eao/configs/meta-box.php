@@ -1,15 +1,18 @@
 <?php
+
 	function add_meta_ncm() {
 	    add_meta_box( 'numero_da_ncm','Dados NCM', 'AddNcmN', 'ncm', 'side','high');
 	}
 	add_action( 'add_meta_boxes', 'add_meta_ncm' );
 
 	function AddNcmN( $post ) {
-	    wp_nonce_field( basename( __FILE__ ), 'prfx_nonce' );
-	    $post = get_post_meta($post->ID);
-    ?>
 
-	<table>
+	    wp_nonce_field( basename( __FILE__ ), 'prfx_nonce' );
+
+	    $post = get_post_meta($post->ID);
+
+    ?>
+<table>
 		<tr>
 			<td style="width: 50%;">
 	        	<label for="numero_da_ncm">Número da NCM</label>
@@ -28,8 +31,8 @@
 		</tr>
 	</table>
 
-
     <?php }
+
 
 	function prfx_meta_save( $post_id ) {
 	    $is_autosave = wp_is_post_autosave( $post_id );
@@ -45,3 +48,54 @@
 	 
 	}
 	add_action( 'save_post', 'prfx_meta_save' );
+
+?>
+
+
+<?php
+
+	abstract class Meta_Box_Default
+	{
+	    public function __construct()
+	    {
+	        add_action('add_meta_boxes', array($this, 'add_meta_box'));
+	        add_action('save_post', array($this, 'save'));
+	    }
+	}
+
+	class Meta_Box_NCM_OBS extends Meta_Box_Default{
+		public function add_meta_box(){
+			add_meta_box(
+                strtolower(__CLASS__)
+                ,'Número da NCM'
+                ,array($this, 'render')
+                ,'ncm'
+				,'side'
+                ,'default'
+            );
+		}
+
+		public function render($post)
+		{
+			echo  "Olá";
+		}
+		
+		public function save($post_id)
+	    {
+	       update_post_meta($post_id, 'observacao', 'eduardo');
+	    }
+	}
+
+	function call_meta_boxes()
+	{
+	    $classes = array(
+	        'Meta_Box_NCM_OBS',
+	    );
+
+	    foreach($classes as $class)
+	        new $class;
+	}
+	
+    add_action('load-post.php', 'call_meta_boxes');
+    add_action('load-post-new.php', 'call_meta_boxes');
+?>

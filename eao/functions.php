@@ -28,9 +28,33 @@
 		// Vanilla
 		// wp_enqueue_script( 'script_vanilla',  assetsurl() . '/lib/vanillamasker/vanilla.js');
 
+		// Loader
+		wp_enqueue_style('style_loader', assetsurl() . '/lib/pace/pace.min.css' );
+		wp_enqueue_script( 'script_loader', assetsurl() . '/lib/pace/pace.min.js' );
+
+		// Angular CDN
+		wp_enqueue_script('angular', "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js");
+		wp_enqueue_script('angular_route', "https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js");
+
 		// My LIB
 		wp_enqueue_script( 'my_js',  assetsurl() . '/assets/js/app.js');
 		wp_enqueue_style( 'my_css', assetsurl() . '/assets/css/app.css');
+
+		// Angular
+		wp_enqueue_script( 'my_main', assetsurl() . '/assets/js/main.js',array('angular', 'angular_route'));
+		wp_enqueue_script( 'configs', assetsurl() . '/assets/js/configs.js',array('my_main'));
+		wp_enqueue_script( 'services', assetsurl() . '/assets/js/services.js',array('my_main'));
+		wp_enqueue_script( 'controllers', assetsurl() . '/assets/js/controllers.js',array('my_main'));
+
+		wp_localize_script(
+		'my_main',
+		'myLocalized',
+			array(
+				'partials' => trailingslashit( get_template_directory_uri() ) . 'view/'
+				)
+		);
+
+		
 	}
 	add_action( 'wp_enqueue_scripts', 'load_assets' );
 
