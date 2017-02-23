@@ -1,0 +1,37 @@
+
+
+	NCM
+
+	Automatização da lista de códigos das ncms
+	mesmo com quatro o resultado das pesquisa sempre vir com as ncms de oito dígitos
+	ncms excluídas devem ficar com observações quando importada a nova lista
+	só mostrar as que existem observações vinculadas
+
+	Mostrar a maior quantidade de informações possível na pesquisa
+
+	CNAE
+
+	Artigos:	
+	Área de destaque
+
+	Legislação:	
+	Área de destaque
+
+	Notícias
+	Mudar forma de paginação
+
+	Dar destaque ao fórum
+
+	Anexador de xml
+		não precisar mudar de página ao clicar no item da nota
+
+	cursos
+		mais destaque aos preços
+
+	Menu:
+		Responsividade
+
+	PagSeguro
+		Status da transação
+
+	Busca pelo radical das palavras na pesquisa index
