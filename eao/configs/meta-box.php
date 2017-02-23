@@ -67,22 +67,85 @@
 		public function add_meta_box(){
 			add_meta_box(
                 strtolower(__CLASS__)
-                ,'Número da NCM'
+                ,'Essa NCM Está vinculada a observação'
                 ,array($this, 'render')
                 ,'ncm'
-				,'side'
+				,'normal'
                 ,'default'
             );
 		}
 
 		public function render($post)
 		{
-			echo  "Olá";
+			get_template_part("partials/meta-box","ncm");
 		}
 		
 		public function save($post_id)
 	    {
-	       update_post_meta($post_id, 'observacao', 'eduardo');
+			$data = (object) $_POST['observacao'];
+
+			global $wpdb;
+			$wpdb->update(
+				'icms_posts',
+				array('post_parent' => $_POST['observacao']),
+				array( 'ID' => $post_id)
+			);
+			foreach ($data as $value) {
+				update_post_meta($post_id, 'observacao', $value);
+			}
+	    }
+	}
+
+		class Meta_Box_OBS_NCM extends Meta_Box_Default{
+		public function add_meta_box(){
+			add_meta_box(
+                strtolower(__CLASS__)
+                ,'NCMs Com Esta Observação'
+                ,array($this, 'render')
+                ,'observacao'
+				,'normal'
+                ,'default'
+            );
+		}
+
+		public function render($post)
+		{
+			get_template_part("partials/meta-box","obs");
+		}
+		
+		public function save($post_id)
+	    {
+			$data = (object) $_POST['ncm'];
+
+			global $wpdb;
+
+			if($data == new stdClass()):
+				$wpdb->update(
+					'icms_posts',
+					array('post_parent' => 0),
+					array('post_parent' => $post_id)
+				);
+				$wpdb->update(
+					'icms_postmeta',
+					array('meta_value' => 0),
+					array('meta_value' => $post_id)
+				);
+			else:
+				$wpdb->update(
+					'icms_posts',
+					array('post_parent' => 0),
+					array('post_parent' => $post_id)
+				);
+				foreach($data as $value):
+					$wpdb->update(
+						'icms_posts',
+						array('post_parent' => $post_id),
+						array( 'ID' => $value)
+					);
+					update_post_meta($value, 'observacao', $post_id);
+				endforeach;
+			endif;
+			update_post_meta($post_id, 'ncm', $data);
 	    }
 	}
 
@@ -90,6 +153,7 @@
 	{
 	    $classes = array(
 	        'Meta_Box_NCM_OBS',
+	         'Meta_Box_OBS_NCM',
 	    );
 
 	    foreach($classes as $class)

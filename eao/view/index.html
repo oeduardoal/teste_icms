@@ -8,6 +8,11 @@
 		<span class="ncm"><b>Número da NCM:</b> {{a.NCM.numero_da_ncm}}</span>
 		<br>
 		<span class="ncm"><b>Descrição Da Ncm:</b> <span>{{a.NCM.descricao_da_ncm}}</span></span>
-		<br><br>
+		<br>
+			<span style="font-weight: bold;">Observações: </span><br>
+			<ul>
+				<li ng-repeat="b in a.NCM.relacao">{{b}}</li>
+			</ul>
+			<hr>
 	</div>
 </div>

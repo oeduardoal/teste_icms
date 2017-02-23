@@ -5,6 +5,7 @@
 	$(document).ready(function() {
 		console.log("EAO");
 		$(document).foundation();
+
 		// $('html').niceScroll();
 
 		// function inputHandler(masks, max, event) {
