@@ -1,9 +1,11 @@
-app.factory('GET', function($http){
+app.factory('GET', function($http, $timeout){
 	var _getNCM = function () {
 		return $http.get('http://localhost/icms/wp-json/wp/v2/ncm');
 	};
-	var _search = function () {
-		return $http.get('http://localhost/icms/wp-json/wp/v2/ncm?search=0101&per_page=1');
+	var _search = function (pesquisa) {
+		return $timeout(function(){
+			$http.get('http://localhost/icms/wp-json/wp/v2/ncm?search=' + pesquisa)
+		}, 400);
 	};
 	return {
 		getNcm: _getNCM,

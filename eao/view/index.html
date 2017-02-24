@@ -1,6 +1,6 @@
 <div class="large-6 large-centered columns">
 	<form ng-submit="submit()" name="form">
-		 <input type="text" class="input" name="search" placeholder="Pesquise... " ng-model="pesquisa">
+		 <input type="text" class="input" name="search" placeholder="Pesquise... " ng-model="pesquisa" ng-change="submit()" ng-delay="300">
 	</form>
 	
 	<h4>Mais Pesquisados...</h4>
@@ -11,7 +11,7 @@
 		<br>
 			<span style="font-weight: bold;">Observações: </span><br>
 			<ul>
-				<li ng-repeat="b in a.NCM.relacao">{{b}}</li>
+				<li>{{a.NCM.observacao_id}}</li>
 			</ul>
 			<hr>
 	</div>

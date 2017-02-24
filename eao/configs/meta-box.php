@@ -51,7 +51,6 @@
 
 ?>
 
-
 <?php
 
 	abstract class Meta_Box_Default
@@ -114,7 +113,8 @@
 		}
 		
 		public function save($post_id)
-	    {
+		{
+
 			$data = (object) $_POST['ncm'];
 
 			global $wpdb;
