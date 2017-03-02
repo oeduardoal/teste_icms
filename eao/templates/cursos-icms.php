@@ -27,9 +27,9 @@
 			</article>
 			<?php endfor; ?>
 		</div>
-	<a href="">
-		<button class="button button-amarelo">
-			VISUALIZAR TODOS
-		</button>
-	</a>
+		<a href="">
+			<button class="button button-amarelo ver-todos">
+				VISUALIZAR TODOS
+			</button>
+		</a>
 </section>

@@ -90,5 +90,16 @@
 			background-color: $amarelo;
 			color: #000;
 		}
+
+	}
+	button.ver-todos{
+		border-radius: 5px;
+		margin-top: 2rem;
+		background-color: $amarelo;
+		color: #000;
+	}
+	button.ver-todos:hover{
+		background-color: $azulh;
+		color: #FFF;
 	}
 }

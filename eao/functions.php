@@ -19,6 +19,10 @@
 		//  Foundation
 		wp_enqueue_style( 'style_foundation', assetsurl() . '/lib/foundation/css/foundation.min.css');
 		wp_enqueue_script( 'script_foundation',  assetsurl() . '/lib/foundation/js/foundation.min.js', array('jquery'));
+		wp_enqueue_style( 'owl_css_2', assetsurl() . '/lib/owl/owl.theme.css');
+		wp_enqueue_style( 'owl_css_2', assetsurl() . '/lib/owl/owl.transition.css');
+		wp_enqueue_style( 'owl_css_1', assetsurl() . '/lib/owl/owl.carousel.css');
+		wp_enqueue_script( 'owl_js',  assetsurl() . '/lib/owl/owl.carousel.js', array('jquery'), '', true);
 
 		// Lightbox
 		// wp_enqueue_style( 'style_lightbox', assetsurl() . '/lib/lightbox/css/lightbox.min.css');

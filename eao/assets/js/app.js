@@ -5,7 +5,18 @@
 	$(document).ready(function() {
 		console.log("EAO");
 		$(document).foundation();
+			$('.slider-noticias').owlCarousel({
+				items:3,
+				pagination: false
+			});
 
+			var owl = $('.slider-noticias');
+			$('.btn-left').click(function() {
+			    owl.trigger('owl.prev');
+			})
+			$('.btn-right').click(function() {
+			    owl.trigger('owl.next');
+			})
 		// $('html').niceScroll();
 
 		// function inputHandler(masks, max, event) {

@@ -3,12 +3,21 @@ $cinzah: #cacaca;
 $azul: #007abb;
 $azulh: #01619e;
 $amarelo: #fac227;
+$cinzap: #5d5d5d;
 
 ::-moz-selection {background: $azul;color: #fff;}
 ::selection{background: $azul;color: #fff;}
 body{background-color: 	#FFF;}
 a,a:hover,p, span{color: #252525;font-size: 16px;}
 
+@mixin linesh1($color){
+	content: "";
+	width: 130px;
+	height: 5px;
+	position: absolute;
+	top: 20px;
+	background-color: $color;
+}
 // reset foundation
 input,input:hover,input:active,input:focus{box-shadow: none !important;border: none !important;}
 
@@ -33,6 +42,8 @@ input,input:hover,input:active,input:focus{box-shadow: none !important;border: n
 	margin-right: -1px;
 
 }
+
+
 
 #subheader{
 	background-color: #e5e5e5;
@@ -169,4 +180,11 @@ input,input:hover,input:active,input:focus{box-shadow: none !important;border: n
 			content: "\f105  ";
 		}
 	}
+}
+
+.imageresize{
+	height: 13rem;
+	margin-bottom: 1rem;
+	background-size: cover;
+	background-repeat: no-repeat;
 }

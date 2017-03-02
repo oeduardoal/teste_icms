@@ -50,7 +50,7 @@ gulp.task('sass', function(){
 gulp.task('compressjs', function (cb) {
     return gulp.src('assets/js/app.js')
       .pipe(concat('jq.min.js'))
-      .pipe(uglify())
+      .pipe(uglify().on('error', sass.logError))
       .pipe(gulp.dest('assets/js/m'));
 });
 
