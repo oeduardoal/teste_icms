@@ -31,9 +31,12 @@
 		// Vanilla
 		// wp_enqueue_script( 'script_vanilla',  assetsurl() . '/lib/vanillamasker/vanilla.js');
 
-		// Loader
+		// Pace
 		wp_enqueue_style('style_loader', assetsurl() . '/lib/pace/pace.min.css' );
 		wp_enqueue_script( 'script_loader', assetsurl() . '/lib/pace/pace.min.js' );
+		
+		// 
+		wp_enqueue_script( 'script_nice', 'https://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.6.8-fix/jquery.nicescroll.min.js',array('jquery'));
 
 		// Angular CDN
 		wp_enqueue_script('angular', "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js");

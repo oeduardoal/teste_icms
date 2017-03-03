@@ -5,4 +5,6 @@
 	<?php get_template_part('templates/instagram') ?>
 	<?php get_template_part('templates/noticias') ?>
 	<?php get_template_part('templates/legislacoes') ?>
+	<?php get_template_part('templates/depoimentos') ?>
+	<?php get_template_part('templates/parceiros') ?>
 <?php get_footer(); ?>

@@ -37,7 +37,12 @@ gulp.task('images', function(){
 });
 
 gulp.task('sass', function(){
-   return gulp.src('assets/sass/*.scss')
+  var files = [
+    'assets/sass/_styles.scss',
+    'assets/sass/media.scss',
+    'assets/sass/*.scss',
+  ];
+   return gulp.src(files)
     .pipe(sass().on('error', sass.logError))
     .pipe(concat('main.min.css'))
     .pipe(cssnano({ zindex: false }))

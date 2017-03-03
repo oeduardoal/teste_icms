@@ -14,7 +14,7 @@
 		<section id="articles" class="slider-noticias">
 			<?php for ($i=0; $i < 6; $i++): ?>
 					<div class="article-item">
-						<div class="imageresize" style="background: url(http://placehold.it/330x190);"></div>
+						<div class="imageresize" style="background-image: url(http://www.icmspratico.com.br/wp-content/uploads/2017/02/ANALISTA-CONT%C3%81BIL-front.jpg);"></div>
 						<header>
 							<h2>CURSO ANALISTA FISCAL: TURMA 16, INICIANDO EM 01/04/17.</h2>
 						</header>
