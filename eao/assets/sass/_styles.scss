@@ -148,7 +148,7 @@ input,input:hover,input:active,input:focus{box-shadow: none !important;border: n
 		background-color: $azulh;
 		padding: 1.5rem;
 		margin-top: .6rem;
-		margin-left: -2rem;
+		margin-left: -10rem;
 		z-index: 5;
 	}
 	.menu-header li > ul li{
@@ -217,12 +217,17 @@ input,input:hover,input:active,input:focus{box-shadow: none !important;border: n
 }
 	.btn-nav{
 		background-color: #fff;
-		padding: 1rem;
-		border-radius: 50%;
 		position: absolute;
 		top: 30rem;
 		cursor: pointer;
 		z-index: 999;
+		text-align: center;
+		border-radius: 50%;
+		i{
+			padding: 6px 21px;
+			text-align: center;
+			font-size: 45px;
+		}
 	}
 	.btn-left{
 		left: 4rem;
@@ -230,3 +235,4 @@ input,input:hover,input:active,input:focus{box-shadow: none !important;border: n
 	.btn-right{
 		right: 4rem;
 	}
+	.button-amarelo{font-family: "Roboto";}

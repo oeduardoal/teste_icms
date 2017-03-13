@@ -6,10 +6,10 @@
 			<p>onec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis</p>
 		</main>
 		<button class="btn-nav btn-left">
-			<i class="fa fa-arrow-left" aria-hidden="true"></i>
+			<i class="fa fa-angle-left" aria-hidden="true"></i>
 		</button>
 		<button class="btn-nav btn-right">
-			<i class="fa fa-arrow-right" aria-hidden="true"></i>
+			<i class="fa fa-angle-right" aria-hidden="true"></i>
 		</button>
 		<section id="articles" class="slider-noticias">
 			<?php for ($i=0; $i < 6; $i++): ?>

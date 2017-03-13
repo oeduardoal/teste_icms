@@ -2,11 +2,10 @@
 
 #noticias{
 	font-family: "Raleway";
-	margin-top: 10px;
-	padding-top: 3rem;
+	margin-top: 5px;
+	padding-top: 4rem;
 	position: relative;
 	background-image: url(../img/noticias.jpg);
-	background-attachment: fixed;
 	background-repeat: no-repeat;
 	background-color: #e1e8ee;
 	.btn-nav{
@@ -44,15 +43,17 @@
 		text-align: center;
 		background-color: $amarelo;
 		color: #000;
+		border-radius: 5px;
+		font-family: "Roboto";
 	}
 	.button-amarelo:hover{
 		color: #FFF;
 		background-color: $azulh;
 	}
 	#articles{
-		margin-top: 4rem;
 		width: 80%;
 		margin: 0 auto;
+		margin-top: 3rem;
 	}
 	// articleItem
 	.article-item{

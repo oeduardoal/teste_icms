@@ -2,8 +2,16 @@
 
 #parceiros{
 	margin-top: 60px;
+	position: relative;	
 	.imageresize{
 		height: 6rem;
+	}
+	.btn-nav{
+		top: 4.7em;
+		padding: 1rem 1.2rem;
+		i{
+			font-size: 50px;
+		}
 	}
 	.parceiros{
 		margin: 0 auto;
@@ -19,6 +27,7 @@
 		font-size: 30px;
 		position: relative;
 		text-align: center;
+	    font-family: "Roboto";
 	}
 	header > h1:after{
 		@include linesh1($azul);
@@ -27,5 +36,16 @@
 	header > h1:before{
 		@include linesh1($azul);
 		left: 22%;
+	}
+	> footer{
+		text-align: center;
+		margin-top: 3rem;
+		button{
+			@include button-outline(#b5babf);
+			color: #606163;
+		}
+		button:hover{
+			@include button-outlineh();
+		}
 	}
 }

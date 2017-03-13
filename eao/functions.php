@@ -83,6 +83,22 @@
 			  'sidebar-menu' => __( 'Sidebar Menu' )
 			)
 		);
+		register_nav_menus(
+			array(
+			  'menurodape1' => __( 'Menu Rodapé 1' )
+			)
+		);
+		register_nav_menus(
+			array(
+			  'menurodape2' => __( 'Menu Rodapé 2' )
+			)
+		);
+		register_nav_menus(
+			array(
+			  'menurodape3' => __( 'Menu Rodapé 3' )
+			)
+		);
+		
 	}
 	add_action( 'init', 'register_my_menus' );
 
@@ -99,6 +115,17 @@
 	    ) );
 	}
 
+	####################################################
+	function get_menu_obj( $location ) {
+	    if( empty($location) ) return false;
+
+	    $locations = get_nav_menu_locations();
+	    if( ! isset( $locations[$location] ) ) return false;
+
+	    $menu_obj = get_term( $locations[$location], 'nav_menu' );
+
+	    return $menu_obj;
+	}
 	####################################################
 	
 	// Tamanho da largura das imagens.

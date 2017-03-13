@@ -15,7 +15,7 @@
 			</section>
 			<section class="large-6 medium-6 small-12 columns">
 				<nav class="submenu">
-					  <?php wp_nav_menu(array('menu' => 'sub-menu', 'menu_class' => '', 'container' => 'menu')); ?>
+					  <?php wp_nav_menu(array('theme_location' => 'sub-menu', 'menu_class' => '', 'container' => 'menu')); ?>
 				</nav>
 			</section>
 		</section>
@@ -31,7 +31,7 @@
 			</section>
 			<section id="header-main" class="large-10 columns">
 				<nav class="menu">
-					  <?php wp_nav_menu(array('menu' => 'header-menu', 'menu_class' => 'menu-header', 'container' => 'menu', 'walker' => new my_walker_nav_menu)); ?>
+					  <?php wp_nav_menu(array('theme_location' => 'header-menu', 'menu_class' => 'menu-header', 'container' => 'menu', 'walker' => new my_walker_nav_menu)); ?>
 				</nav>
 			</section>
 		</section>

@@ -34,7 +34,7 @@
 			    owld.trigger('owl.next');
 			})
 
-			var owlp = $('.slider-depoimentos');
+			var owlp = $('.slider-parceiros');
 			$('#parceiros .btn-left').click(function() {
 			    owlp.trigger('owl.prev');
 			})
