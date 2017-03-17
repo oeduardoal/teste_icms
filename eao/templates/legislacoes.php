@@ -2,27 +2,31 @@
 	<header>
 		<h1>VEJA AS LEGISLAÇÕES</h1>
 	</header>
-	<?php for ($i=0; $i < 4; $i++): ?>
+	<?php $args_l = array(  'posts_per_page' => 4,'orderby' => 'date','order' => 'DESC', 'cat'=>37); ?>
+	<?php $legislacoes = new WP_Query($args_l); ?>
+	<?php
+		while($legislacoes->have_posts()):
+		$legislacoes->the_post();
+	?>
 	<article class="large-6 float-left">
-		<div class="imageresize left" style="background-image: url(http://www.icmspratico.com.br/wp-content/uploads/2017/02/ANALISTA-CONT%C3%81BIL-front.jpg);"></div>
+		<div class="imageresize left" style="background-image: url(<?php the_post_thumbnail_url('float: left;'); ?>);"></div>
 		<div class="right">
 			<header>
-				<h2>DECRETO Nº 32.154, de 22 de fevereiro de 2017</h2>
+				<h2><?php the_title(); ?></h2>
 			</header>
 			<main>
-				<p>
-					Altera o decreto nº 30.012, de 30 de Dezembro de 2009, que dispõe sobre o programada de atração de empreendimento estratégico - PROADE, no âmbito do fundo de desenvolvimento industrial do Ceará...
-				</p>
+				<p><?php echo wp_trim_words(get_the_content(), 35); ?></p>
 			</main>
 			<footer>
-				<a href="#">
+				<a href="<?php the_permalink(); ?>">
 					<button class="button">LEIA MAIS</button>
 				</a>
 			</footer>
 		</div>
 		
 	</article>
-	<?php endfor;?>
+	<?php endwhile;?>
+	<?php wp_reset_postdata(); ?>
 	<footer>
 		<a href="#">
 			<button class="button button-amarelo">VISUALIZAR TODOS</button>

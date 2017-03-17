@@ -2,30 +2,38 @@
 	<header>
 		<h1><b>CURSOS</b> ICMS PRÁTICO</h1>
 	</header>
-		<div class="row">
-			<?php for ($i=0; $i < 2; $i++): ?>
-			<article class="large-6 columns">
-				<div class="left">
-					<label class="periodo">Periodo</label>
-					<label class="data">13/05 <span class="a-data">a</span> 17/06/2017</label>
-					<label for="carga" class="carga-horaria">Carga Horária</label>
-					<span class="carga" id="carga">48 H/S</span>
-				</div>
-				<div class="right">
-					<header>
-						<h4>ICMS PÁTICO DE A A Z - TURMA 3</h4>
-					</header>
-					<main>
-						<p>
-							Tem como objetivo estudar o ICMS de A a Z, a partir dos conceitos iniciais...
-						</p>
-					</main>
-					<a href="">
-						<button class="button button-azul">MAIS INFORMAÇÕES</button>
-					</a>
-				</div>
-			</article>
-			<?php endfor; ?>
+		<div class="row" id="slider-cursos">
+			<?php $argsc = array('post_type' => 'curso',); ?>
+			<?php $cursos = new WP_Query($argsc); ?>
+			<?php
+				while($cursos->have_posts()):
+				$cursos->the_post();
+			?>
+
+				<article class="columns item">
+					<div class="left">
+						<label class="periodo">Periodo</label>
+						<label class="data"><?php the_field('periodo') ?> </label>
+						<label for="carga" class="carga-horaria">Carga Horária</label>
+						<span class="carga" id="carga"><?php the_field('carga_horaria') ?></span>
+					</div>
+					<div class="right">
+						<header>
+							<h4><?php the_title(); ?></h4>
+						</header>
+						<main>
+							<p>
+								<?php echo wp_trim_words(get_the_content(), 15); ?>
+							</p>
+						</main>
+						<a href="<?php the_permalink(); ?>">
+							<button class="button button-azul">MAIS INFORMAÇÕES</button>
+						</a>
+					</div>
+				</article>
+		<?php endwhile; ?>
+		<?php wp_reset_postdata(); ?>
+
 		</div>
 		<a href="">
 			<button class="button button-amarelo ver-todos">

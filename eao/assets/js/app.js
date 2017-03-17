@@ -7,15 +7,27 @@
 		$(document).foundation();
 			$('.slider-noticias').owlCarousel({
 				items:3,
-				pagination: false
+				pagination: false,
+				slideSpeed: 500,
+				autoPlay: 2500,
 			});
 			$('.slider-depoimentos').owlCarousel({
 				items:2,
 				pagination: false,
+				slideSpeed: 500,
+				autoPlay: 2000,
 			});
 			$('.slider-parceiros').owlCarousel({
 				items:5,
 				pagination: false,
+				slideSpeed: 500,
+				autoPlay: 1000,
+			});
+			$('#slider-cursos').owlCarousel({
+				items:2,
+				pagination: false,
+				slideSpeed: 500,
+				autoPlay: 1500,
 			});
 
 			var owl = $('.slider-noticias');
@@ -40,6 +52,14 @@
 			})
 			$('#parceiros .btn-right').click(function() {
 			    owlp.trigger('owl.next');
+			})
+
+			var owlc = $('#slider-cursos');
+			$('#cursos .btn-left').click(function() {
+			    owlc.trigger('owl.prev');
+			})
+			$('#cursos .btn-right').click(function() {
+			    owlc.trigger('owl.next');
 			})
 
 		// function inputHandler(masks, max, event) {

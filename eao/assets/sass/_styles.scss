@@ -5,7 +5,6 @@ $azulh: #01619e;
 $amarelo: #fac227;
 $cinzap: #5d5d5d;
 $azulclaro: #e1e8ee;
-
 ::-moz-selection {background: $azul;color: #fff;}
 ::selection{background: $azul;color: #fff;}
 body{background-color: 	#FFF;}
@@ -51,7 +50,7 @@ input,input:hover,input:active,input:focus{box-shadow: none !important;border: n
 }
 @mixin borderr(){
 	border-right: solid 1px $cinzah;
-	margin-right: -1px;
+	// margin-right: -1px;
 
 }
 
@@ -120,7 +119,6 @@ input,input:hover,input:active,input:focus{box-shadow: none !important;border: n
 		@include transition();
 		@include borderr();
 		padding: .2rem .6rem;
-		margin-right: 0px;
 		color: #515050;
 	}
 	.menu-header > li:hover > a{
@@ -128,6 +126,7 @@ input,input:hover,input:active,input:focus{box-shadow: none !important;border: n
 	}	
 	.menu-header li:last-child a{border:none;}
 
+	
 
 	// Mega menu
 	.menu-header ul{
@@ -139,6 +138,13 @@ input,input:hover,input:active,input:focus{box-shadow: none !important;border: n
 	}
 	.menu-header > li:hover{
 		background-color: $azul;
+	}
+	.menu-header li.menu-item-depth-0.current-menu-ancestor{
+		background-color: $azul;
+		a{
+			border-right: none	;
+			color: #FFF;
+		}
 	}
 	.menu-header > li:hover > ul{
 		padding: 1rem;
@@ -236,3 +242,15 @@ input,input:hover,input:active,input:focus{box-shadow: none !important;border: n
 		right: 4rem;
 	}
 	.button-amarelo{font-family: "Roboto";}
+	.reveal-overlay{z-index: 99999999 !important;}
+
+	#wpmtst_client_name,#wpmtst_email,#wpmtst_post_content{
+		border: solid 2px $azul !important;
+	}
+	.strong-form textarea{height: 5rem !important;}
+	.testimonial-success{
+		font-size: 20px;
+		text-align: center;
+		font-weight: 600;
+		color: $azul;
+	}

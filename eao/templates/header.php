@@ -24,7 +24,7 @@
 		<section class="row">
 			<section id="logo-icms" class="large-2 columns">
 				<picture>
-					<a href="<?php site_url() ?>">
+					<a href="<?php bloginfo('siteurl') ?>">
 						<img src="<?php echo assetsurl() ?>/assets/img/logo-icms.png" alt="Logo Icms Prático">
 					</a>
 				</picture>
@@ -37,3 +37,7 @@
 		</section>
 	</section>
 </header>
+<?php if(!is_home() && !is_404()): ?>
+	<?php get_template_part('templates/buscador-pratico'); ?>
+<?php endif; ?>
+

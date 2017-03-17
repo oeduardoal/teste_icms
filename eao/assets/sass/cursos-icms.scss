@@ -29,7 +29,7 @@
 		margin: 0 auto;
 	}
 	article{
-		max-width: calc(50% - .5rem);
+		max-width: calc(100% - .5rem);
 		margin-top: 1rem;
 		border: solid 2px $cinza;
 		padding-bottom: 0;
@@ -101,5 +101,9 @@
 	button.ver-todos:hover{
 		background-color: $azulh;
 		color: #FFF;
+	}
+	#slider-cursos{
+		width: 80%;
+		margin: 0 auto;
 	}
 }

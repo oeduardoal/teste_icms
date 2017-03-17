@@ -12,30 +12,42 @@
 			<i class="fa fa-angle-right" aria-hidden="true"></i>
 		</button>
 		<section id="articles" class="slider-noticias">
-			<?php for ($i=0; $i < 6; $i++): ?>
+
+			<?php $argsn = array('post_type' => 'post','cat'=>36); ?>
+			<?php $noticias = new WP_Query($argsn); ?>
+			<?php
+				while($noticias->have_posts()):
+				$noticias->the_post();
+			?>
 					<div class="article-item">
-						<div class="imageresize" style="background-image: url(http://www.icmspratico.com.br/wp-content/uploads/2017/02/ANALISTA-CONT%C3%81BIL-front.jpg);"></div>
+						<div class="imageresize" style="background-image: url(<?php the_post_thumbnail_url('full'); ?>);"></div>
 						<header>
-							<h2>CURSO ANALISTA FISCAL: TURMA 16, INICIANDO EM 01/04/17.</h2>
+							<h2><?php the_title(); ?></h2>
 						</header>
 						<main>
-							<p>É uma das mais nobres na área fiscal de um estabelecimento, tendo em vista sua importância na verificação...</p>
+							<p>
+								<?php echo wp_trim_words(get_the_content(), 10); ?>
+							</p>
 						</main>
 						<small>
-							<span class="data">16/02/2017</span>
+							<span class="data"><?php the_date('d/m/Y'); ?></span>
 							<label for="categoria-name">
 								Categoria:
-								<span class="categoria-name"><a href="#">Noticias</a></span>
+								<span class="categoria-name">
+									<?php the_category( ', ' ); ?>
+								</span>
 							</label>
 						</small>
 						<hr>
-						<a href="#">
+						<a href="<?php the_permalink(); ?>">
 							<button class="button button-azul">
 								LEIA MAIS
 							</button>
 						</a>
 					</div>
-			<?php endfor; ?>
+			<?php endwhile; ?>
+	<?php wp_reset_postdata(); ?>
+			
 		</section>
 		<footer>
 			<a href="#">
