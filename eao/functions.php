@@ -134,3 +134,10 @@
 		set_post_thumbnail_size( 480, 350, true );
 		
 	}
+
+	// CORS
+	add_filter('allowed_http_origins', 'add_allowed_origins');
+	function add_allowed_origins($origins) {
+	    $origins[] = '*';
+	    return $origins;
+	}

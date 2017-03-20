@@ -15,7 +15,7 @@
 				items:2,
 				pagination: false,
 				slideSpeed: 500,
-				autoPlay: 2000,
+				autoPlay: 3000,
 			});
 			$('.slider-parceiros').owlCarousel({
 				items:5,
@@ -38,13 +38,6 @@
 			    owl.trigger('owl.next');
 			})
 
-			var owld = $('.slider-depoimentos');
-			$('#depoimentos .btn-left').click(function() {
-			    owld.trigger('owl.prev');
-			})
-			$('#depoimentos .btn-right').click(function() {
-			    owld.trigger('owl.next');
-			})
 
 			var owlp = $('.slider-parceiros');
 			$('#parceiros .btn-left').click(function() {
@@ -52,6 +45,14 @@
 			})
 			$('#parceiros .btn-right').click(function() {
 			    owlp.trigger('owl.next');
+			})
+
+			var owld = $('.slider-depoimentos');
+			$('#depoimentos .btn-left').click(function() {
+			    owld.trigger('owl.prev');
+			})
+			$('#depoimentos .btn-right').click(function() {
+			    owld.trigger('owl.next');
 			})
 
 			var owlc = $('#slider-cursos');

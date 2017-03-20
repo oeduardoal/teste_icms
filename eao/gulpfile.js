@@ -62,18 +62,19 @@ gulp.task('compressjs', function (cb) {
 gulp.task('compressng', function (cb) {
     return gulp.src([
         'assets/js/main.js',
-        'assets/js/config.js',
+        'assets/js/configs.js',
         'assets/js/services.js',
         'assets/js/directives.js',
         'assets/js/controllers.js',
       ])
       .pipe(concat('ng.min.js'))
-      .pipe(uglify())
+      // .pipe(uglify())
       .pipe(gulp.dest('assets/js/m'))
 });
 
 gulp.task('run', ['browserSync', 'sass', 'compressjs', 'compressng'], function (){
   gulp.watch('assets/sass/*.scss', ['sass']);
   gulp.watch('assets/js/*.js', ['compressjs']);
+  gulp.watch('assets/js/*.js', ['compressng']);
   gulp.watch('assets/css/*.min.css', browserSync.reload);
 })

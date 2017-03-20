@@ -20,6 +20,58 @@
 			float: left;
 		}
 	}
+	.input-results{
+		position: relative;
+		.results{
+			position: absolute;
+			background-color: #FFF;
+			margin-top: 70px;
+			z-index: 9999;
+			width: 100%;
+			padding: 1rem 1rem 0 1rem;
+			font-family: "Raleway";
+			max-height: 17rem;
+			overflow-y: scroll;
+			overflow-x: hidden;
+			img{
+				width: 5rem;
+				text-align: center;
+				display: block;
+				margin: 0 auto;
+				margin-bottom: 10px;
+			}
+			h3{
+				font-size: 15px;
+				color: #1a1a1a;
+				font-weight: 500;
+				text-transform: uppercase;
+			}
+			h4{
+				font-size: 15px;
+				font-weight: 600;
+				color: $azulh;
+				margin-bottom: 0px !important;
+				padding-bottom: 0px !important;
+			}
+			p{
+				font-size: 14px;
+				margin-bottom: 5px;
+				border-bottom: dashed 1px #a1a1a1;
+				padding-bottom: 5px;
+			}
+			button{
+				background-color: $azulh;
+				color: #FFF;
+				margin-top: 10px;
+				float: right;
+			}
+			button:hover{
+				background-color: $amarelo;
+				color: #000;
+			}
+			hr{margin: 10px 0px;}
+		}
+	}
 }
 .btn-primary{
 	background-color: $azulh;

@@ -1,10 +1,32 @@
-<section id="search" class="large-5 float-left">
+<section id="search" class="large-5 float-left" ng-app="app">
 	<div class="row">
 
 		<!-- Buscador Prático -->
-		<form action="#" method="#">
-			<span>Buscador prático</span>
-				<input type="text" placeholder="Digite a NCM ou palavra" class="input-ncm" name="ncm">
+		<form action="#" method="#" ng-controller="main">
+				<span>Buscador prático</span>
+				<section class="input-results">
+					<input type="text" placeholder="Digite a NCM ou palavra" ng-model="input" ng-change="getncms()" ng-delay="1000"  class="input-ncm" name="ncm">
+					<section class="results" ng-show="input">
+						<picture ng-show="!ncms">
+							<h4>Procurando ...</h4>
+							<img src="<?php echo assetsurl; ?>/assets/img/loader.gif">
+						</picture>
+						<div class="content" ng-show="ncms">
+							<h3>Resultado RÁPIDO da pesquisa</h3><hr>
+								<a href="{{ncm.link}}" ng-repeat="ncm in ncms">
+									<section class="result">
+										<h4 ng-bind-html="ncm.title.rendered | unsafe"></h4>
+										<p>asd</p>
+									</section>
+								</a>
+							
+							<a href="#"><button class="button button-azulh">Visualizar todos</button></a>
+						</div>
+						<div class="content" ng-show="vazio">
+							<h4>Nada Encontrado!</h4>
+						</div>
+						</section>
+				</section>
 				<span>
 					<button type="submit" class="button btn-search">Buscar</button>
 				</span>

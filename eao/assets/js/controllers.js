@@ -1,15 +1,22 @@
-app.controller('main', ['$scope', '$http','GET', '$timeout', function($scope,$http,GET, $timeout){
+app.controller('main', ['$scope', '$http','$timeout','NCMS',function($scope,$http,$timeout,NCMS){
 
-	GET.getNcm().then(function(ncms){
-		$scope.ncms = ncms.data;
-	})
+	
+	$scope.loading = true;
 
-	$scope.submit = function(){
-		GET.search($scope.pesquisa).then(function(data){
-		})
+	$scope.getncms = function(){
+		$scope.ncms = "";
+		NCMS.getNcm($scope, function(data){
+			$scope.ncms = data.data;
+			$scope.loading = false;
+			if($scope.ncms == []){
+				$scope.vazio = true;
+			}else{
+				$scope.vazio = false;
+			};
+			console.log($scope.vazio)
+		});
+		
 	}
-}]);
-
-app.controller('search', ['$scope', '$http','GET', function($scope,$http,GET){
-
+	
+	var input = $scope.input;
 }]);
