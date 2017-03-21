@@ -1,7 +1,10 @@
 <?php #wp_nav_menu( array( 'theme_location' => 'sidebar-menu', 'menu_class' => 'sidebar-menu')); ?>
 
-<section id="widgets" class="large-4 float-right">
+<section id="widgets" class="large-4 float-right" style="position: relative;">
 		<section class="large-12 columns widget">
+				<button class="button button-toggle" style="position: absolute;right: 0;top: 0;">
+					<i class="fa fa-angle-right"></i>
+				</button>
 				<header>
 					<h3>ANTECIPAÇÃO DO ICMS</h3>
 				</header>

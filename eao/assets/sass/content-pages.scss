@@ -33,15 +33,22 @@
 .page,.single{
 	#search{
 	margin-top: 2rem;
+	.row{
+		padding: 0px;
+		padding-top: .3rem;
+	}
 		.btn-search{
 			padding: .85em 1em;
 		}
+		.filtros{margin-bottom: 0px;}
 	}
 	#widgets{
+		position: relative;
 		.widget{
 			margin-bottom: 10px;
 			background-color: $azulclaro;
 			padding: 1rem;
+			padding-top: 3rem;
 			h3{
 				font-weight: 900;
 				font-family: "Roboto";
@@ -91,6 +98,17 @@
 			p{
 				font-size: 14px;
 				color: #575757;
+			}
+		}
+		button.button-toggle{
+			position: absolute;
+			top: 0;
+			right: 0;
+			background-color: $amarelo;
+			i{
+				color: #000;
+				font-weight: 600;
+				font-size: 20px;
 			}
 		}
 	}

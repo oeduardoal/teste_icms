@@ -9,7 +9,7 @@ $azulclaro: #e1e8ee;
 ::selection{background: $azul;color: #fff;}
 body{background-color: 	#FFF;}
 a,a:hover,p, span{color: #252525;font-size: 16px;}
-
+.pace .pace-progress{height: 3px;}
 	.button-amarelo{
 		margin-top: 2rem;
 		text-align: center;
@@ -19,6 +19,11 @@ a,a:hover,p, span{color: #252525;font-size: 16px;}
 	.button-amarelo:hover{
 		color: #FFF;
 		background-color: $azulh;
+	}
+	.fixed-widgets{
+		position: fixed !important;
+		right: 0;
+		top: 0;
 	}
 
 @mixin linesh1($color){
