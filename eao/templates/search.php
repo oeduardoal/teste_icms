@@ -2,10 +2,10 @@
 	<div class="row">
 
 		<!-- Buscador Prático -->
-		<form action="#" method="#" name="form" ng-controller="main">
+		<form action="<?php bloginfo('siteurl'); ?>" method="GET" name="form" ng-controller="main">
 				<span>Buscador prático</span>
 				<section class="input-results">
-					<input type="text" placeholder="Digite a NCM ou palavra" ng-model="input" ng-change="getncms()" ng-delay="500"  class="input-ncm" name="ncm">
+					<input type="text" placeholder="Digite a NCM ou palavra" ng-model="input" ng-change="getncms()" ng-delay="500"  class="input-ncm" name="s">
 					<section class="results" ng-show="input">
 						<picture ng-show="!ncms">
 							<h4>Procurando ...</h4>
@@ -20,7 +20,7 @@
 									</section>
 								</a>
 							
-							<a href="#"><button class="button button-azulh">Visualizar todos</button></a>
+							<button type="submit" class="button button-azulh">Visualizar todos</button>
 						</div>
 						<div class="content" ng-show="vazio">
 							<h4>Nada Encontrado!</h4>
@@ -31,11 +31,11 @@
 					<button type="submit" class="button btn-search">Buscar</button>
 				</span>
 			<section class="filtros">
-				<input type="radio" ng-model="filtro" ng-change="getncms()" ng-value="'observacao'" />
+				<input type="radio" ng-model="filtro" ng-change="getncms()" ng-value="'ncm'" name="filtro" />
 				<label for="ncm"> NCM Comentada</label>
-				<input type="radio" ng-model="filtro" ng-change="getncms()"  ng-value="'posts'" />
+				<input type="radio" ng-model="filtro" ng-change="getncms()"  ng-value="'posts'" name="filtro" />
 				<label for="all">Em todo o site</label>
-				<input type="radio" ng-model="filtro" ng-change="getncms()"  ng-value="'artigo'"/>
+				<input type="radio" ng-model="filtro" ng-change="getncms()"  ng-value="'artigo'" name="filtro" />
 				<label for="artigos">Artigos</label>
 	    	</section>
 		</form>

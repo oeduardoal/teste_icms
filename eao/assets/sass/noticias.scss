@@ -50,7 +50,9 @@
 		color: #FFF;
 		background-color: $azulh;
 	}
-	#articles{
+	
+}
+#articles{
 		width: 80%;
 		margin: 0 auto;
 		margin-top: 3rem;
@@ -107,4 +109,3 @@
 	.owl-item:nth-child(2n+1),.owl-item:nth-child(2n+2){
 		border-right: solid 2px $cinza;
 	}
-}

@@ -1,18 +1,22 @@
 <?php get_header(); ?>
+<?php get_template_part('templates/header') ?>
 
 <?php while (have_posts()): the_post(); ?>
-
-	<section id="content">
+<section class="row expanded">
+	<section id="content" class="large-8 float-left single single-id-<?php the_ID(); ?>">
+		<?php get_template_part("templates/breadcrumbs" ); ?>
 		<header>
-			<h1><?php the_title() ?></h1>
+			<h3><?php the_title() ?></h3>
 		</header>
 		<main>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, sint recusandae consequuntur laborum assumenda impedit possimus voluptatibus quod dolores, dolore praesentium animi incidunt inventore dicta officiis sapiente similique. Recusandae, laboriosam.
-			</p>
+			<?php the_content(); ?>
 		</main>
 	</section>
-
+	<?php get_sidebar(); ?>
+</section>
 <?php endwhile;?>
 
-<?php get_footer(); ?>
+<?php #get_template_part("templates/noticias"); ?>
+<?php #get_template_part("templates/depoimentos"); ?>
+<?php #get_template_part("templates/parceiros"); ?>
+<?php get_footer(); ?>	

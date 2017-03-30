@@ -3,7 +3,7 @@
 		$('.loader-page').fadeOut(1000);
 	})
 	$(document).ready(function() {
-		console.log("EAO");
+		console.log("Desenvolvido por Eduardo Almeida :D");
 		$(document).foundation();
 			$('.slider-noticias').owlCarousel({
 				items:3,
@@ -38,7 +38,6 @@
 			    owl.trigger('owl.next');
 			})
 
-
 			var owlp = $('.slider-parceiros');
 			$('#parceiros .btn-left').click(function() {
 			    owlp.trigger('owl.prev');
@@ -63,12 +62,16 @@
 			    owlc.trigger('owl.next');
 			})
 
-			$("html").niceScroll();
+			
+			
+			// $("html").niceScroll();
+
 			$('button.button-toggle').click(function(){
 				$('#content').toggleClass('large-10');
 				$('#widgets').toggleClass('large-4').toggleClass('large-2');
 			})
 
+			
 			$(window).scroll(function(){
 				if($('header').height() + $('section#search').height() < $('html').scrollTop()){
 					$('#widgets').addClass('fixed-widgets');
@@ -81,21 +84,56 @@
 				}
 			})
 
-		// function inputHandler(masks, max, event) {
-		// 	var c = event.target;
-		// 	var v = c.value.replace(/\D/g, '');
-		// 	var m = c.value.length > max ? 1 : 0;
-		// 	VMasker(c).unMask();
-		// 	VMasker(c).maskPattern(masks[m]);
-		// 	c.value = VMasker.toPattern(v, masks[m]);
-		// }
+			$('.modal-login').click(function(e){
+ 				e.preventDefault();
+ 				 $('#modal-create').foundation('close');
+ 				 $('#modal-login').foundation('open');
+			})
+			$('.modal-create').click(function(e){
+ 				e.preventDefault();
+ 				 $('#modal-login').foundation('close');
+ 				 $('#modal-create').foundation('open');
+			})
 
-		// var telMask = ['(99) 9999-99999', '(99) 99999-9999'];
-		// var tel = document.querySelector('#phone');
-		// VMasker(tel).maskPattern(telMask[0]);
-		// tel.addEventListener('input', inputHandler.bind(undefined, telMask, 14), false);
+			$('a, button').not('.logo, #scrollToTop, .esqueceu-senha, .modal-login, .modal-create, #logo-icms a , #depoimentos a,#depoimentos button, .button-toggle, [href*="/curso/"]').click(function(e){
+		        if(!AUTHED )
+		        {
+		            e.preventDefault();
 
+		            var redirect_to = '';
 
+		            if( $(this).is('a') )
+		                redirect_to = $(this).attr('href');
+
+		            if( $(this).is('button') )
+		                redirect_to = $(this).parents('form').attr('action');
+
+		            if( ! redirect_to )
+		                redirect_to = window.location.href;
+
+		            $('[name=redirect_to]').val(redirect_to);
+
+		           $('#modal-login').foundation('open');
+		        }
+		    });
+			$('.create-account').click(function(e){
+				var form = $('#create-account').serialize();
+
+					// Valide Password
+					var pass1 = $('input[name=password]').val();
+					var pass2 = $('input[name=password_confirm]').val();
+					if(pass1 != pass2){
+							// Alert Error
+					}
+
+			})
+			if(!AUTHED){
+				$('#modal-login').foundation('open');
+			}
+
+			$('#user_login').attr('placeholder', 'Login').attr('autofocus', '<true></true>');
+    		$('#user_pass').attr('placeholder', 'Senha');
+    		$('#wp-submit').addClass('expanded').addClass('large');
 	})
 })(jQuery);
 

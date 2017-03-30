@@ -3,7 +3,7 @@
 		<h1><b>CURSOS</b> ICMS PRÁTICO</h1>
 	</header>
 		<div class="row" id="slider-cursos">
-			<?php $argsc = array('post_type' => 'curso',); ?>
+			<?php $argsc = array('post_type' => 'curso', 'posts_per_page' => 1000); ?>
 			<?php $cursos = new WP_Query($argsc); ?>
 			<?php
 				while($cursos->have_posts()):
@@ -35,7 +35,7 @@
 		<?php wp_reset_postdata(); ?>
 
 		</div>
-		<a href="">
+		<a href="<?php the_permalink(260684); ?>">
 			<button class="button button-amarelo ver-todos">
 				VISUALIZAR TODOS
 			</button>

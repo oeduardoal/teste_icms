@@ -19,7 +19,7 @@
 			<div class="aspas"></div>
 				<main>
 					<p>
-						<?php the_content(); ?>
+						<?php echo wp_trim_words(get_the_excerpt()); ?>
 					</p>
 				</main>
 				<footer>

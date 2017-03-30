@@ -2,16 +2,26 @@
 	<section id="subheader">
 		<section class="row">
 			<section class="large-6 medium-6 small-12 columns">
+			<?php if(!is_user_logged_in()): ?>
 				<span>
 					Olá, Visitante - 		
 					<b>
-						<a href="#">Entrar</a>
+						<a href="#" class="modal-login">Entrar</a>
 					</b>
 					ou
 					<b>
-						<a href="#">Cadastrar</a>
+						<a href="#"  class="modal-create">Cadastrar</a>
 					</b>
 				</span>
+			<?php else: ?>
+				<span>
+					Olá, <?php $current_user = wp_get_current_user(); echo @$current_user->user_firstname . " " . @$current_user->user_lastname; ?>
+					-
+					<b>
+						<a href=" <?php echo wp_logout_url( home_url() ); ?>">Sair</a>
+					</b>
+				</span>
+			<?php endif; ?>
 			</section>
 			<section class="large-6 medium-6 small-12 columns">
 				<nav class="submenu">
@@ -25,7 +35,7 @@
 			<section id="logo-icms" class="large-2 columns">
 				<picture>
 					<a href="<?php bloginfo('siteurl') ?>">
-						<img src="<?php echo assetsurl() ?>/assets/img/logo-icms.png" alt="Logo Icms Prático">
+						<img src="<?php echo assetsurl() ?>/assets/img/logo-icms.png" alt="Logo Icms Prático" class="logo-icms">
 					</a>
 				</picture>
 			</section>

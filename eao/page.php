@@ -5,11 +5,7 @@
 <?php while (have_posts()): the_post(); ?>
 <section class="row expanded">
 	<section id="content" class="large-8 float-left page page-id-<?php the_ID(); ?>">
-		<?php
-			if ( function_exists('yoast_breadcrumb') ) {
-			  yoast_breadcrumb('<section id="breadcrumbs">','</section>');
-			}
-		?>
+		<?php get_template_part("templates/breadcrumbs" ); ?>
 		<header>
 			<h3><?php the_title() ?></h3>
 		</header>

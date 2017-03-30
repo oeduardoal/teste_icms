@@ -1,6 +1,6 @@
 <section id="confira-cursos">
-	<a href="">
-		<button class="button btn-cursos">
+	<a href="<?php the_permalink(260684); ?>">
+		<button  class="button btn-cursos">
 			CLIQUE AQUI E CONFIRA
 		</button>
 	</a>

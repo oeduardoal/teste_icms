@@ -31,7 +31,7 @@ a,a:hover,p, span{color: #252525;font-size: 16px;}
 	width: 130px;
 	height: 5px;
 	position: absolute;
-	top: 20px;
+	bottom: 20px;
 	background-color: $color;
 }
 // reset foundation
@@ -125,6 +125,8 @@ input,input:hover,input:active,input:focus{box-shadow: none !important;border: n
 		@include borderr();
 		padding: .2rem .6rem;
 		color: #515050;
+		pointer-events: none;
+		cursor: pointer;
 	}
 	.menu-header > li:hover > a{
 		color: #FFF;
@@ -247,11 +249,14 @@ input,input:hover,input:active,input:focus{box-shadow: none !important;border: n
 		right: 4rem;
 	}
 	.button-amarelo{font-family: "Roboto";}
-	.reveal-overlay{z-index: 99999999 !important;}
 
 	#wpmtst_client_name,#wpmtst_email,#wpmtst_post_content{
 		border: solid 2px $azul !important;
 	}
+	
+	body.is-reveal-open {overflow-y: scroll;}
+	.reveal-overlay{z-index: 9999;overflow-y: hidden;}
+
 	.strong-form textarea{height: 5rem !important;}
 	.testimonial-success{
 		font-size: 20px;
@@ -259,3 +264,33 @@ input,input:hover,input:active,input:focus{box-shadow: none !important;border: n
 		font-weight: 600;
 		color: $azul;
 	}
+	
+	// Modais
+		// login
+		.modal{
+			background-color: $azul;
+			padding: 2rem;
+			header{
+				h2{font-size: 25px; color:#FFF;text-align:center;font-family:"Raleway";}
+			}
+			main{
+				label{
+					color: #FFF;
+				}
+				.button{background-color:#fff !important;color: $azul;@include transition();font-weight:600;}
+
+				.button:hover{background-color:$azulh !important;color: #FFF;}
+			}
+			footer{
+				.modal-create{
+					color: #FFF;
+				}
+			}
+
+			// WP
+			.login-remember{display:none;}
+		}
+		.reveal{
+			width: 400px;
+			border:none; 
+		}

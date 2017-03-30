@@ -47,6 +47,12 @@
 		wp_enqueue_script( 'my_ng',  assetsurl() . '/assets/js/m/ng.min.js');
 		wp_enqueue_style( 'my_css', assetsurl() . '/assets/css/main.min.css');
 
+		// Block
+		if(!current_user_can('administrator')):
+			wp_enqueue_script( 'block_script',  assetsurl() . '/assets/js/m/block.js',array('jquery'));
+		endif;
+
+
 		// // Angular
 		// wp_enqueue_script( 'my_main', assetsurl() . '/assets/js/main.js',array('angular', 'angular_route'));
 		// wp_enqueue_script( 'configs', assetsurl() . '/assets/js/configs.js',array('my_main'));

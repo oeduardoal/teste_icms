@@ -2,7 +2,7 @@ app.controller('main', ['$scope', '$http','$timeout','NCMS',function($scope,$htt
 
 	
 	$scope.loading = true;
-	$scope.filtro = "artigo";
+	$scope.filtro = "ncm";
 	$scope.getncms = function(){
 		$scope.ncms = "";
 		NCMS.getNcm($scope, function(data){
