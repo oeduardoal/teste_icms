@@ -1,5 +1,5 @@
 <section id="confira-cursos">
-	<a href="<?php the_permalink(260684); ?>">
+	<a href="<?php bloginfo('siteurl'); ?>/curso">
 		<button  class="button btn-cursos">
 			CLIQUE AQUI E CONFIRA
 		</button>

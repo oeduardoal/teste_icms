@@ -8,6 +8,7 @@
 	background-image: url(../img/noticias.jpg);
 	background-repeat: no-repeat;
 	background-color: #e1e8ee;
+	background-size:cover;
 	.btn-nav{
 		top: 23rem;
 	}
@@ -32,7 +33,7 @@
 		@include linesh1(#FFF);
 		left: 25%;
 	}
-	main{
+	main.sub{
 		p{
 			text-align: center;
 			color: #FFF;
@@ -105,7 +106,3 @@
 		}
 	}
 
-	// Fim Article Item
-	.owl-item:nth-child(2n+1),.owl-item:nth-child(2n+2){
-		border-right: solid 2px $cinza;
-	}

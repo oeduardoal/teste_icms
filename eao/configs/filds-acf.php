@@ -7,15 +7,6 @@ if(function_exists("register_field_group"))
 		'title' => 'Detalhes - CURSO',
 		'fields' => array (
 			array (
-				'key' => 'field_578e3225ed054',
-				'label' => 'Pagamento via Pagseguro?',
-				'name' => 'pagamento_via_pagseguro',
-				'type' => 'true_false',
-				'instructions' => 'Marque essa opção para exibição do botão de compra via Pagseguro',
-				'message' => '',
-				'default_value' => 1,
-			),
-			array (
 				'key' => 'field_5790c2471a858',
 				'label' => 'Primeiro Lote - Data',
 				'name' => 'primeiro_lote_data',
@@ -70,20 +61,7 @@ if(function_exists("register_field_group"))
 				'display_format' => 'dd/mm/yy',
 				'first_day' => 1,
 			),
-			array (
-				'key' => 'field_5790c34168e83',
-				'label' => 'Terceiro Lote - Valor',
-				'name' => 'terceiro_lote_valor',
-				'type' => 'number',
-				'instructions' => 'Insira o valor do TERCEIRO LOTE a ser disponibilizado',
-				'default_value' => '',
-				'placeholder' => '',
-				'prepend' => '',
-				'append' => '',
-				'min' => '',
-				'max' => '',
-				'step' => '',
-			),
+			
 			array (
 				'key' => 'field_578e30c1dab8e',
 				'label' => 'Professores',
@@ -222,7 +200,7 @@ if(function_exists("register_field_group"))
 				),
 			),
 		),
-		'options' => array (
+			'options' => array (
 			'position' => 'normal',
 			'layout' => 'default',
 			'hide_on_screen' => array (

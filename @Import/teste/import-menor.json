@@ -1,0 +1,52 @@
+[
+	{
+		"ncm": "01012100",
+		"ncm_dot": "0101.21.00",
+		"descrição": "reprodutores de raça pura",
+		"categorias": [
+			"0101",
+			"01012",
+			"010121"
+		]
+	},
+	{
+		"ncm": "01012900",
+		"ncm_dot": "0101.29.00",
+		"descrição": "outros",
+		"categorias": [
+			"0101",
+			"01012",
+			"010129"
+		]
+	},
+	{
+		"ncm": "01013000",
+		"ncm_dot": "0101.30.00",
+		"descrição": "asininos",
+		"categorias": [
+			"0101",
+			"01013",
+			"010130"
+		]
+	},
+	{
+		"ncm": "01019000",
+		"ncm_dot": "0101.90.00",
+		"descrição": "outros",
+		"categorias": [
+			"0101",
+			"01019",
+			"010190"
+		]
+	},
+	{
+		"ncm": "01022110",
+		"ncm_dot": "0102.21.10",
+		"descrição": "prenhes ou com cria ao pé",
+		"categorias": [
+			"0102",
+			"01022",
+			"010221"
+		]
+	}
+]

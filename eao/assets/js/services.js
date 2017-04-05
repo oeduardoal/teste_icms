@@ -18,3 +18,8 @@ app.factory('NCMS',function($http, $timeout,configs){
 	return obj;
 });
 app.filter('unsafe', function($sce) { return $sce.trustAsHtml; });
+app.filter('trim', function () {
+    return function(value) {
+        
+    };
+});

@@ -16,7 +16,7 @@
 								<a href="{{ncm.link}}" ng-repeat="ncm in ncms">
 									<section class="result">
 										<h4 ng-bind-html="ncm.title.rendered | unsafe"></h4>
-										<p>asd</p>
+										<p>Clique para saber mais!</p>
 									</section>
 								</a>
 							

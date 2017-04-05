@@ -217,4 +217,52 @@ add_action('init', function()
     );
 
     register_post_type('professor', $args + $default);
+
+    $args = array(
+        'menu_icon' => 'dashicons-businessman',
+        'label' => 'Parceiros',
+        'labels' => array(
+            'name' => 'Parceiros',
+            'singular_name' => 'Parceiro',
+            'menu_name' => 'Parceiros',
+            'name_admin_bar' => 'Parceiros',
+            'add_new' => 'Adicionar novo',
+            'add_new_item' => 'Adicionar novo Parceiro',
+            'new_item' => 'Novo Parceiro',
+            'edit_item' => 'Editar Parceiro',
+            'view_item' => 'Ver Parceiro',
+            'all_items' => 'Ver Parceiros',
+            'search_items' => 'Procurar Parceiro',
+            'not_found' => 'Parceiro não encontrado',
+            'not_found_in_trash' => 'Parceiro não encontrado no lixo'
+        ),
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'menu_position' => -2,
+    );
+
+    register_post_type('parceiro', $args + $default);
+
+    $args = array(
+        'menu_icon' => 'dashicons-shield',
+        'label' => 'Legislações',
+        'labels' => array(
+            'name' => 'Legislações',
+            'singular_name' => 'Legislação',
+            'menu_name' => 'Legislações',
+            'name_admin_bar' => 'Legislações',
+            'add_new' => 'Adicionar novo',
+            'add_new_item' => 'Adicionar novo Legislação',
+            'new_item' => 'Novo Legislação',
+            'edit_item' => 'Editar Legislação',
+            'view_item' => 'Ver Legislação',
+            'all_items' => 'Ver Legislações',
+            'search_items' => 'Procurar Legislação',
+            'not_found' => 'Legislação não encontrado',
+            'not_found_in_trash' => 'Legislação não encontrado no lixo'
+        ),
+        'supports' => array('title', 'editor', 'thumbnail'),
+        'menu_position' => -2,
+    );
+
+    register_post_type('legislacao', $args + $default);
 });

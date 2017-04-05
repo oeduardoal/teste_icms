@@ -23,6 +23,7 @@
   	
   	<!-- Modernizr -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+	<?php wp_head(); ?>
 
 	<!-- SCRIPTS -->
 	<script>
@@ -30,8 +31,6 @@
 	   	AJAXURL = '<?php echo admin_url('admin-ajax.php'); ?>';
 	    AUTHED = <?php echo is_user_logged_in() ? 'true' : 'false'; ?>;
 	</script>
-
-	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 
@@ -52,33 +51,64 @@
 </div>
 
 
+<!-- Alert -->
+<div class="callout message alert">
+	<p></p>
+</div>
 
 <!-- Modal Criar Conta -->
-<div class="reveal modal" id="modal-create" data-reveal data-close-on-click="true"  data-animation-in="fade-in">
+<div class="reveal modal" id="modal-create" data-reveal  data-animation-in="fade-in">
 	
 	<header>
 		<h2>Informe seus dados para criação da sua conta.</h2>
 	</header>
 		<main>
-		    <form id=create-account method="post" action="<?php echo site_url('wp-login.php'); ?>">
+		   <form id="create-account" data-abide="ajax">
+				<div data-abide-error class="alert callout" style="display: none;">
+					<p><i class="fa fa-alert"></i>Existem erros no formulário</p>
+				</div>
+				
 		  		<?php wp_nonce_field('vb_new_user','vb_new_user_nonce', true, true ); ?>
-		        <input type="hidden" name="action" value="create_account" />
-		        <input type="text" name="username" placeholder="Login" autocomplete="off" required>
-		        <input type="email" name="email" placeholder="E-mail" autocomplete="off" required>
-		        <input type="password" name="password" placeholder="Senha" required>
-		        <input type="password" name="password_confirm" placeholder="Confirmar Senha" required>
-		        <select name="estado">
-		            <option value="">Selecione seu estado</option>
-		            <?php foreach(estados() as $uf => $nome): ?>
-		           	 <option value="<?php echo $uf; ?>"><?php echo $nome; ?></option>
-		            <?php endforeach; ?>
-		        </select>
-		        <input type="text" name="cidade" placeholder="Cidade" autocomplete="off" required>
-		        <div class="well well-sm errors"></div>
-		        <button type="submit" class="button expanded login create-account" value="Criar conta" data-loading-text="Processando...">Criar conta</button>
+		  		<label>
+		  			<input type="text" name="reg_user" placeholder="Login" autocomplete="off" aria-describedby="exampleHelpText" id="vb_username" required>
+		  			<span class="form-error">Esse campo é requerido</span>
+		  		</label>
+		  		
+		  		<label>
+		        	<input type="email" name="reg_mail" placeholder="E-mail" autocomplete="off" required id="vb_email" value="">
+		  			<span class="form-error">Esse campo é requerido</span>
+		  		</label>
+
+		  		<label>
+		        	<input type="password" name="reg_pass" placeholder="Senha" required id="reg_pass" data-abide-ignore>
+		  			<span class="form-error">Esse campo é requerido</span>
+		  		</label>
+		  		<label>
+		  			 <input type="password" name="reg_pass_ver" data-equalto="reg_pass" placeholder="Confirmar Senha" required id="reg_pass_ver">
+		  			 <span class="form-error">Confirme sua senha	</span>
+		  		</label>
+		       
+				<label for="">
+					<select name="reg_estado" id="vb_estado" required="required">
+						<option value="">Selecione seu estado</option>
+						<?php foreach(estados() as $uf => $nome): ?>
+						<option value="<?php echo $uf; ?>"><?php echo $nome; ?></option>
+						<?php endforeach; ?>
+					</select>
+					<span class="form-error">Esse campo é requerido</span>
+				</label>
+				
+				<label for="">
+					<input type="text" name="reg_cidade" placeholder="Cidade" autocomplete="off" required id="cidade">
+					<span class="form-error">Esse campo é requerido</span>
+				</label>
+		       
+			        <button type="submit" class="button expanded" id="create-account-button" data-loading-text="Processando..." value="Criar conta">Criar conta</button>
 		    </form>
 		<main>
     <br/>
-    <a class="pull-left back-to-login text-danger" href="#"><i class="fa fa-arrow-circle-left"></i> Voltar</a>
+    <footer>
+    	<a class="modal-login" href="#"><i class="fa fa-arrow-circle-left"></i> Voltar</a>
+    </footer>
 </div>
 

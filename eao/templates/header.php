@@ -15,7 +15,7 @@
 				</span>
 			<?php else: ?>
 				<span>
-					Olá, <?php $current_user = wp_get_current_user(); echo @$current_user->user_firstname . " " . @$current_user->user_lastname; ?>
+					Olá, <strong><a href="<?php bloginfo('siteurl'); ?>/wp-admin/profile.php"><?php $current_user = wp_get_current_user(); echo @$current_user->user_firstname . " " . @$current_user->user_lastname; ?> (Minha Conta)</a></strong>
 					-
 					<b>
 						<a href=" <?php echo wp_logout_url( home_url() ); ?>">Sair</a>

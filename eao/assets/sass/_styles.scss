@@ -64,6 +64,7 @@ input,input:hover,input:active,input:focus{box-shadow: none !important;border: n
 #subheader{
 	background-color: #e5e5e5;
 	font-family: "Raleway";
+	text-align: left;
 	.row{
 		section:nth-child(1){
 			margin: .6rem 0rem;
@@ -123,7 +124,7 @@ input,input:hover,input:active,input:focus{box-shadow: none !important;border: n
 	.menu-header > li > a{
 		@include transition();
 		@include borderr();
-		padding: .2rem .6rem;
+		padding: .2rem .5rem;
 		color: #515050;
 		pointer-events: none;
 		cursor: pointer;
@@ -171,6 +172,7 @@ input,input:hover,input:active,input:focus{box-shadow: none !important;border: n
 		// 
 		display: inline-table;
 		padding-right: 2rem;
+		text-align: left;
 	}
 	.menu-header li > ul > li > ul > li{
 		display: block;
@@ -277,12 +279,21 @@ input,input:hover,input:active,input:focus{box-shadow: none !important;border: n
 				label{
 					color: #FFF;
 				}
-				.button{background-color:#fff !important;color: $azul;@include transition();font-weight:600;}
+				.button{
+					background-color:#fff !important;
+					color: $azul;
+					@include transition();
+					font-weight:600;
+					box-shadow: 0 -5px 0 rgba(0, 0, 0, 0.18) inset !important;
+				}
 
-				.button:hover{background-color:$azulh !important;color: #FFF;}
+				.button:hover,.button.active{background-color:$azulh !important;color: #FFF;}
 			}
 			footer{
 				.modal-create{
+					color: #FFF;
+				}
+				a{
 					color: #FFF;
 				}
 			}
@@ -293,4 +304,19 @@ input,input:hover,input:active,input:focus{box-shadow: none !important;border: n
 		.reveal{
 			width: 400px;
 			border:none; 
+			position: initial;
+			margin-top: 1rem;
 		}
+		.callout.message{
+			display:none;
+			position: absolute;
+			right: 2rem;
+			top: 2rem;
+			width:15rem;
+			z-index: 999999;
+		}
+		.callout.message.show{display:block;}
+
+
+		.allert.collout{background-color: #cc4b37;}
+		.is-invalid-input:not(:focus){border:1px solid #cc4b37 !important;background-color: #f9ecea;}
